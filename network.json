@@ -1,0 +1,85 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name", "isPrimary", "confidence", "legals"],
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "identifier of the person in the network"
+        },
+        "parentId": {
+            "type": "string",
+            "description": "identify's the stepweb profile ID this data was dirived from"
+        },
+        "confidence": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "the confidence in the network being correct"
+        },
+        "tracingId": {
+            "type": "string",
+            "description": "public identifier used to identify a person in given network"
+        },
+        "name": {
+            "type": "string",
+            "description": "name of a network"
+        },
+        "username": {
+            "type": "string",
+            "description": "username in a network"
+        },
+          "lastAccessed": {
+            "type": "string",
+            "format": "date-time",
+            "description": "time the network was last accessed"
+        },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "time the details on the network was last changed"
+        },
+        "legals": {
+           "type": "array",
+           "minItems": 1,
+           "description": "legal contracts held with network by person",
+           "items": { "$ref": "legal.json#" }
+        },
+        "networkLocators": {
+            "type": "array",
+            "description": "identifiable locators for a the person in a given network",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "kind": {
+                        "type": "string",
+                        "description": "type of a network locator e.g. url"
+                    },
+                    "locator": {
+                        "type": "string",
+                        "description": "actual address that locates object in network"
+                    },
+                    "confidence": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100,
+                        "description": "the confidence in the network being correct"
+                    }
+                },
+                "anyOf": [
+                    { "required": ["confidence"] }
+                ]
+            }
+        },
+        "isPrimary": {
+            "type": "boolean",
+            "description": "Is network the persons preferred network"
+        }
+    },
+    "anyOf": [
+        { "required": ["id"] },    
+        { "required": ["networkLocators", "lastUpdated"] },
+        { "required": ["networkLocators", "lastAccessed"] }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "description": "skill person has aquired / learnt",
+    "required": ["name"],
+    "properties": {
+        "name": {
+            "description": "skill name",
+            "type": "string"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of skill"
+        },
+        "acquiredAt" : {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "role" : { 
+                        "$ref" : "role.json#",
+                        "description": "role held"
+                    },
+                    "organisation": {
+                        "$ref": "organisation.json#",
+                        "description": "organisation / institution where the skill was acquired"
+                    },
+                    "weights": {
+                        "type": "array",
+                        "minItems": 1,
+                        "description": "scores given to skill by classification services",
+                        "items": {
+                            "$ref": "skillWeight.json#"
+                        }
+                    },
+                    "kind": {
+                        "description" : "type of place where the skill acquired",
+                        "enum" : [
+                            "education",
+                            "experience",
+                            "personal",
+                            "source",
+                            "unknown"
+                        ]
+                    },
+                    "deduced": {
+                        "type":"boolean",
+                        "description": "deduced or provided value"
+                    },
+                    "confidence" : {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "start": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "date at which the skill was gained"
+                    },
+                    "end": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "date at which the skill was lost"
+                    }
+                }
+            }
+        }
+    }
+}

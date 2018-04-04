@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "description": "education / experience",
+    "properties": {
+        "start": {
+            "type": "string",
+            "format": "date-time",
+            "description": "start date of the education / experience"
+        },
+        "end": {
+            "type": "string",
+            "format": "date-time",
+            "description": "end date of the education / experience"
+        },
+        "establishment": {
+            "$ref": "organisation.json#",
+            "description": "establishment at which the education / experience was gained"
+        },
+        "locations" : {
+            "type": "array",
+            "minItems": 1,
+            "description": "location/s where education occured",
+            "items": { "$ref" : "location.json#" }
+        },
+        "qualifications": {
+            "type": "array",
+            "minItems": 1,
+            "description": "details of the qualification / award achieved",
+            "items": {
+                "$ref": "qualification.json#"
+            }
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of education"
+        }
+    },
+    "anyOf": [
+            {"required": ["establishment"]},
+            {"required": ["qualifications"]}
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["title"],
+    "description": "record of a voluntary role or position held and experienced gained in that position",
+    "properties": {
+        "start": {
+            "type": "string",
+            "format": "date-time",
+            "description": "start date of a voluntary experience"
+        },
+        "organisation": {
+            "$ref": "organisation.json#"
+        },
+        "end": {
+            "type": "string",
+            "format": "date-time",
+            "description": "end date of a voluntary experience"
+        },
+        "title": {
+            "type": "string",
+            "description": "job title or role name of the experience"
+        },
+        "description": {
+            "type": "string",
+            "description": "details of the volunteering"
+        }
+    }
+}

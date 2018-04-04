@@ -1,0 +1,15 @@
+{
+    "name": "competency",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "detail of the course competency"
+        },
+        "number": {
+            "type": "string",
+            "description": "reference to a level or certificate of course competency"
+        }
+    }
+}

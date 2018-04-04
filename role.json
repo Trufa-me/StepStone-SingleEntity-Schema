@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name"],
+    "minProperties": 1,
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "job title of role name of an experince"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of role"
+        }
+    }
+}

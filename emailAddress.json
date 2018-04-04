@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["confidence"],
+    "properties": {
+        "email": {
+            "type": "string",
+            "description": "email address"
+        },
+        "emailType": {
+            "enum": ["home","work","personal","other"],
+            "description": "the type of address (i.e. home / work / unknown)"
+        },
+        "md5sum": {
+            "type": "string",
+            "description": "MD5 of email address"
+        },
+        "isPrimary": {
+            "type": "boolean",
+            "description": "Is this the primary email address"
+        },
+        "confidence": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "the confidence in the email address being related directly with profile"
+        },
+        "legals": {
+           "type": "array",
+           "minItems": 1,
+           "description": "legal contracts governing the use of this address",
+           "items": { "$ref": "legal.json#" }
+        }
+    },
+    "anyOf": [
+        { "required": ["md5sum"] },
+        { "required": ["email", "isPrimary", "legals"] }
+    ]
+}

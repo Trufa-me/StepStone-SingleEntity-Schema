@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name"],
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "name of a language"
+        },
+        "proficiency": {
+            "type": "string",
+            "description": "level of proficiency of a language"
+        }
+    }
+}

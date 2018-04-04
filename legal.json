@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["contractType", "valid", "date"],
+    "properties": {
+        "contractType"        : {
+            "enum"            : [
+                "firstPartyUse", "thirdPartyUse", "discoverable", "delete", "contactable",
+                "verified" 
+            ]
+        },
+        "date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "time of creation of legal object"
+        },
+        "contractDescription" : { "type" : "string"},
+        "valid"               : { "type" : "boolean"}
+    }
+}

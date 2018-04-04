@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required" : ["url"],
+    "properties": {
+        "description": {
+            "type": "string",
+            "description": "description of a website - eg personal blog"
+            },
+        "url": {
+            "type": "string",
+            "description": "URL of a website"
+        }
+    }
+}

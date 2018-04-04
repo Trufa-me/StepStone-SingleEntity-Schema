@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "description": "Location",
+    "properties": {
+        "displayLocation": {
+            "type": "string",
+            "description": "Human friendly location name"
+        },
+        "countryCode"   : { 
+            "$ref": "countryCode.json#",
+            "description": "location country of origin"
+        },
+        "locality": {
+            "type": "string",
+            "description": "refers to city, town, district etc"
+        },
+        "county": {
+            "type": "string",
+            "description": "County or State"
+        },
+        "postcode": {
+            "type": "string",
+            "description": "Postcode"
+        },
+        "region": {
+            "type": "string",
+            "description": "Region"
+        },
+        "lat": {
+            "type": "string",
+            "description": "Latitude"
+        },
+        "lng": {
+            "type": "string",
+            "description": "Longitude"
+        },
+        "isPrimary": {
+            "type": "boolean",
+            "description": "Is this the primary location"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of role"
+        }
+    },
+    "anyOf": [
+        { "required": ["lat", "lng"] },
+        { "required": ["displayLocation"] },
+        { "required": ["postcode"] },
+        { "required": ["locality", "countryCode"] }
+    ]
+}

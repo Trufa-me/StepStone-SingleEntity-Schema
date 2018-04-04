@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name"],
+    "description": "qualification",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "name of the qualification"
+        },
+        "kind": {
+            "type": "string",
+            "description": "type of qualification"
+        },
+        "description": {
+            "type": "string",
+            "description": "description of the qualification"
+        },
+        "grade": {
+            "type": "string",
+            "description": "qualification grade"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of qualification"
+        }
+    }
+}

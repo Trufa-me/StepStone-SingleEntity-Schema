@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "name of an organisation"
+        },
+        "description": {
+            "type": "string",
+            "description": "description of an organisation"
+        },
+        "locations": { 
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "location.json#" }
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of organisation"
+        },
+        "url": {
+            "type": "string",
+            "description": "URL of an organisation"
+        }
+    },
+    "anyOf": [
+        { "required": ["normalised"] },
+        { "required": ["locations"] },
+        { "required": ["name"] },
+        { "required": ["url"] }
+    ]
+}

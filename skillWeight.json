@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["label","value","origin"],
+    "properties": {
+        "label": {
+            "type": "string",
+            "description": "name of classification"
+        },
+        "value": {
+            "type": "string",
+            "description": "value of classification"
+        },
+        "origin": {
+            "type": "string",
+            "description": "origin of the classification"
+        }
+    }
+}

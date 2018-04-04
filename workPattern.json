@@ -1,0 +1,78 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["code","label"],
+    "properties": {
+        "label": {
+            "type": "string",
+            "description": "text description"
+        },
+        "code": {
+            "type": "string",
+            "oneOf": [
+                { "$ref": "#/definitions/permanent" },
+                { "$ref": "#/definitions/temporary" },
+                { "$ref": "#/definitions/contract" },
+                { "$ref": "#/definitions/parttime" },
+                { "$ref": "#/definitions/weekday" },
+                { "$ref": "#/definitions/weekend" },
+                { "$ref": "#/definitions/morning" },
+                { "$ref": "#/definitions/afternoon" },
+                { "$ref": "#/definitions/evening" },
+                { "$ref": "#/definitions/night" },
+                { "$ref": "#/definitions/volunteering" },
+                { "$ref": "#/definitions/unclassified" }
+            ]
+        }
+    },
+    "definitions": {
+        "permanent" : {
+            "enum": ["WP0001"],
+            "description": "regular employees or the directly employed work for an employer and are paid directly by that employer. In addition to their wages, they often receive benefits like subsidized health care, paid vacations, holidays, sick time, or contributions to a retirement plan. Alternatives: full-time / vollzeit / plein_temps"
+        },
+        "temporary" : { 
+            "enum": ["WP0002"],
+            "description": "refers to an employment situation where the working arrangement is limited to a certain period of time based on the needs of the employing organisation. Alternatives: cover"
+        },
+        "contract" : {
+            "enum": ["WP0003"],
+            "description": "refers to a person who is a independent trade, business, or profession in which they offer their services to the general public"
+        },
+        "parttime" : { 
+            "enum": ["WP0004"],
+            "description": "person who works fewer hours than a full-time employee. Alternatives: deeltijds / temps_partiel / teilzeit"
+        },
+        "weekday" : { 
+            "enum": ["WP0005"],
+            "description": "works Monday to Friday only. Alternatives: Wochentage"
+        },
+        "weekend" : { 
+            "enum": ["WP0006"],
+            "description": "works Saturday and Sunday only. Alternatives: Wochenende"
+        },
+        "morning" : { 
+            "enum": ["WP0007"],
+            "description": "works mornings"
+        },
+        "afternoon" : { 
+            "enum": ["WP0008"],
+            "description": "works afternoons"
+        },
+        "evening" : { 
+            "enum": ["WP0009"],
+            "description": "works evenings"
+        },
+        "night" : { 
+            "enum": ["WP0010"],
+            "description": "works nights"
+        },
+        "volunteering" : { 
+            "enum": ["WP001r10"],
+            "description": "works without renumeration"
+        },
+        "unclassified" : { 
+            "enum": ["WP0500"],
+            "description": "unclassified work pattern"
+        }
+    }
+}

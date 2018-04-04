@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "description": "publication",
+    "required": ["title"],
+    "properties": {
+        "authors": {
+            "type": "array",
+            "description": "authors of the publication",
+            "minItems": 1,
+            "items": { "$ref": "member.json#" }
+        },
+        "date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "date at which the work was published"
+        },
+        "organisation": {
+            "$ref": "organisation.json#",
+            "description": "organisation which the article / publication was published"
+        },
+        "publisher": {
+            "$ref": "organisation.json#",
+            "description": "publisher of publication"
+        },
+        "title": {
+            "type": "string",
+            "description": "title of the publication"
+        },
+        "url": {
+            "type": "string",
+            "description": "URL address for the publication"
+        }
+    }
+}

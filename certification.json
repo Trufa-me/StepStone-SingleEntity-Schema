@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "title": {
+            "type": "string",
+            "description": "title or name of the certificate"
+        },
+        "number": {
+            "type": "string",
+            "description": "license number of a certificate"
+        },
+        "certificateAuthority": {
+            "$ref": "organisation.json#",
+            "description": "organisation or body awarding the certificate or licence"
+        },
+        "categories": {
+            "$ref":"nonEmptyArrayOfStrings.json#",
+            "description": "category associated with certification. (e.g vehicle category )"
+        },
+        "start": {
+            "type": "string",
+            "format": "date-time",
+            "description": "period from when the license is valid"
+        },
+        "end": {
+            "type": "string",
+            "format": "date-time",
+            "description": "period to when the license is valid"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of certification"
+        }
+    }
+}

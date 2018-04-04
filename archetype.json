@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "description": "model of personality traits / personality structure",
+    "properties": {
+        "origin": {
+            "type": "string",
+            "description": "origin of archetype"
+        },
+        "openness": {
+            "type": "number",
+            "description": "intellectual, creative, unconventional, innovative, ironic versus shallow, unimaginative, conventional"
+        },
+        "conscientiousness": {
+            "type": "number",
+            "description": "organized, disciplined, diligent, careful, thorough, precise versus sloppy, negligent, reckless, lazy, irresponsible, absent-minded"
+        },
+        "extraversion": {
+            "type": "number",
+            "description": "outgoing, lively, extraverted, sociable, talkative, cheerful, active versus shy, passive, withdrawn, introverted, quiet, reserved"
+        },
+        "agreeableness": {
+            "type": "number",
+            "description": "patient, tolerant, peaceful, mild, agreeable, lenient, gentle versus ill-tempered, quarrelsome, stubborn, choleric"
+        },
+        "neuroticism": {
+            "type": "number",
+            "description": "The tendency to experience unpleasant emotions easily, such as anger, anxiety, depression, and vulnerability"
+        },
+        "emotionality": {
+            "type": "number",
+            "description": "emotional, oversensitive, sentimental, fearful, anxious, vulnerable versus brave, tough, independent, self-assured, stable"
+        },
+        "honesty": {
+            "type": "number",
+            "description": "Honesty-Humility: sincere, honest, faithful, loyal, modest/unassuming versus sly, deceitful, greedy, pretentious, hypocritical, boastful, pompous"
+        }
+    },
+    "oneOf":[
+        {
+            "description": "OCEAN Five factors",
+            "required": ["origin", "openness", "conscientiousness", "extraversion", "agreeableness", "neuroticism"]
+        },
+        {
+            "description": "HEXACO model of personality",
+            "required": ["origin", "honesty", "emotionality", "extraversion", "agreeableness", "conscientiousness", "openness"]
+        }
+    ]
+}

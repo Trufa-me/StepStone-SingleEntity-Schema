@@ -1,0 +1,36 @@
+{
+    "type":"array",
+    "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 2,
+        "required": ["source"],
+        "properties": {
+            "id": {
+                "type": "string",
+                "description": "ID in normalisation system of normalised value"
+            },
+            "priority": {
+                "type":"integer",
+                "minimum": 1,
+                "description": "ordering priority"
+            },
+            "label": {
+                "type": "string",
+                "description": "normalised value in string form"
+            },
+            "source": {
+                "type": "string",
+                "description": "source of the normalisation"
+            },
+            "url": {
+                "type": "string",
+                "description": "URL of the normalisation"
+            }
+        },
+        "dependencies": {
+            "id": ["source"],
+            "url": ["source"]
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "description": "membership details",
+    "properties": {
+        "fullName": {
+            "type": "string",
+            "description": "name of the member"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of member"
+        },
+        "url": {
+            "type": "string",
+            "description": "URL address for the member"
+        }
+    },
+    "anyOf": [
+        {"required": ["fullName"]},
+        {"required": ["normalised"]}
+    ]
+}
+

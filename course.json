@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "minProperties": 1,
+    "properties": {
+        "title": {
+            "type": "string",
+            "description": "title of course"
+        },
+        "organisation": {
+            "$ref": "organisation.json#",
+            "description": "organisation providing the course"
+        },
+        "competencies": {
+            "type": "array",
+            "items": {
+                "$ref": "competency.json#"
+            }
+        }
+    }
+}

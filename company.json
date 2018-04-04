@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["networks"],
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "name of the company"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of company"
+        },
+        "networks": {
+            "type": "array",
+            "minItems": 1,
+            "description": "networks held related to company",
+            "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["network"],
+                    "properties" : {
+                        "network"   : { "$ref": "network.json#" }
+                    }
+            }
+        },
+        "websites": {
+            "type": "array",
+            "minItems": 1,
+            "description": "websites associated with company",
+            "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["website"],
+                    "properties" : {
+                        "website"   : { "$ref": "website.json#" }
+                    }
+            }
+        }
+    }
+}

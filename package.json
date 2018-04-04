@@ -1,0 +1,12 @@
+{
+    "name": "inner_schema",
+    "version": "3.4.0",
+    "description": "Inner schema",
+    "private": true,
+    "main": "lib/model/schema.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Trufa-me/inner_schema"
+    },
+    "license": "ISC"
+}

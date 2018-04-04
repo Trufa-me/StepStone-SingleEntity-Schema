@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "minItems": 1,
+    "properties": {
+        "label": {
+            "type": "string",
+            "description": "label / name of asset"
+        },
+        "content": {
+            "type": "string",
+            "description": "base64 encoded content. MUST be base64 encoded"
+        },
+        "kind": {
+            "enum": ["image", "document", "other"],
+            "description": "the type of the content"
+        },
+        "origin": {
+            "type": "string",
+            "description": "origin of asset"
+        },
+        "priority": {
+            "type":"integer",
+            "minimum": 1,
+            "description": "ordering priority"
+        },
+        "url": { "type": "string" }
+    },
+    "oneOf": [
+        {"required": ["content", "kind", "origin"]},
+        {"required": ["url", "kind", "origin"]}
+    ]
+}

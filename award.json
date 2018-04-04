@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "minProperties": 1,
+    "description": "record of award or honour received",
+    "properties": {
+        "date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "date of an award"
+        },
+        "detail": {
+            "type": "string",
+            "description": "detail of an award"
+        },
+        "organisation": {
+            "description": "details of the organisation bestowing an award",
+            "$ref": "organisation.json#"
+        },
+        "title": {
+            "type": "string",
+            "description": "title of an award"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of certification"
+        }
+    }
+}

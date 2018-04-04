@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "minProperties": 1,
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "title or name of the club, team or association"
+        },
+        "period": {
+            "type": "string",
+            "description": "duration of this position at the club, team or association"
+        },
+        "start": {
+            "type": "string",
+            "format": "date-time",
+            "description": "date started at club / team / association. Can be related to position"
+        },
+        "end": {
+            "type": "string",
+            "format": "date-time",
+            "description": "date ended at club / team / association. Can be related to position"
+        },
+        "position": {
+            "type": "string",
+            "description": "position held at the club, team or association"
+        },
+        "summary": {
+            "type": "string",
+            "description": "description of experience at the club, team or association"
+        },
+        "url": {
+            "type": "string",
+            "description": "URL address for the club, team or association"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of certification"
+        }
+    }
+}

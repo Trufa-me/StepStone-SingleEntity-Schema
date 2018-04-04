@@ -1,0 +1,212 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["networks"],
+    "properties": {
+        "activities": {
+            "type": "array",
+            "description": "recent activities recorded from sources",
+            "items": { "$ref" : "activity.json#" }
+        },
+        "aliases": {
+            "type": "array",
+            "description": "pseudonym or name by which the person is also known as",
+            "items": { "type": "string" }
+        },
+        "archetypes": {
+            "type": "array",
+            "minItems": 1,
+            "description": "psychoanalysis profile of person",
+            "items": { "$ref": "archetype.json#" }
+        },
+        "aspirations": {
+            "type": "array",
+            "minItems": 1,
+            "description": "aspirations / search preferences for a person",
+            "items": { "$ref": "aspiration.json#" }
+        },
+        "assets": {
+            "type": "array",
+            "minItems": 1,
+            "description": "additional assets (cv, document, image, cover letter)",
+            "items": { "$ref": "asset.json#" }
+        },
+        "awards": {
+            "type": "array",
+            "minItems": 1,
+            "description": "record of an award or honour received",
+            "items": { "$ref": "award.json#" }
+        },
+        "birthday": {
+            "description": "birthday of person",
+            "$ref": "birthday.json#"
+        },
+        "certifications": {
+            "type": "array",
+            "minItems": 1,
+            "description": "certificates / licences held by person",
+            "items": { "$ref": "certification.json#" }
+        },
+        "clubs": {
+            "type": "array",
+            "minItems": 1,
+            "description": "clubs, teams and associations person is part of",
+            "items": { "$ref": "club.json#" }
+        },
+        "countryCodes": {
+            "type": "array",
+            "minItems": 1,
+            "description": "code identifying a location related to person",
+            "items": { "$ref": "countryCode.json#" }
+        },
+        "courses": {
+            "type": "array",
+            "minItems": 1,
+            "description": "courses attended / completed",
+            "items": { "$ref": "course.json#" }
+        },
+        "educations": {
+            "type": "array",
+            "minItems": 1,
+            "description": "education attended / completed",
+            "items": { "$ref": "education.json#" }
+        },
+        "emailAddresses": {
+            "type": "array",
+            "minItems": 1,
+            "description": "email addresses related to person",
+            "items": { "$ref": "emailAddress.json#" }
+        },
+        "experiences": {
+            "type": "array",
+            "minItems": 1,
+            "description": "experience aquired",
+            "items": { "$ref": "experience.json#" }
+        },
+        "familyName": {
+            "type": "string",
+            "description": "also know as surname"
+        },
+        "fullName": {
+            "type": "string",
+            "description": "full name of person. Normally a combination of other *Name attributes"
+        },
+        "gender": {
+            "description": "gender of a person",
+            "enum": ["male", "female", "other"]
+        },
+        "givenName": {
+            "type": "string",
+            "description": "also know as forenames"
+        },
+        "groups": {
+            "type": "array",
+            "minItems": 1,
+            "description": "groups / online communities person is a member of",
+            "items": { "$ref": "club.json#" }
+        },
+        "headlines": {
+            "type": "array",
+            "minItems": 1,
+            "description": "summaries current positions",
+            "items": { "type": "string" }
+        },
+        "industries": {
+            "type": "array",
+            "minItems": 1,
+            "description": "industries or market sectors person is a participant in",
+            "items": { "$ref": "industry.json#" }
+        },
+        "interests": {
+            "type": "array",
+            "minItems": 1,
+            "description": "interest a person holds",
+            "items": { "type": "string" }
+        },
+        "languages": {
+            "type": "array",
+            "minItems": 1,
+            "description": "languages related to person",
+            "items": { "$ref": "language.json#" }
+        },
+        "locations": {
+            "type": "array",
+            "minItems": 1,
+            "description": "locations related to person",
+            "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["location", "category"],
+                    "properties" : {
+                        "category"  : { "enum" : ["home", "work", "other"] },
+                        "location"  : { "$ref" : "location.json#" }
+                    }
+            }
+        },
+        "networks": {
+            "type": "array",
+            "minItems": 1,
+            "description": "networks related to person",
+            "items": { "$ref": "network.json#" }
+        },
+        "patents": {
+            "type": "array",
+            "minItems": 1,
+            "description": "patents held by or associated with person",
+            "items": { "$ref": "patent.json#" }
+        },
+        "phoneNumbers": {
+            "type": "array",
+            "minItems": 1,
+            "description": "associated telephone numbers",
+            "items": { "$ref": "phoneNumber.json#" }
+        },
+        "projects": {
+            "type": "array",
+            "minItems": 1,
+            "description": "projects participated on / in",
+            "items": { "$ref": "project.json#" }
+        },
+        "publications": {
+            "type": "array",
+            "minItems": 1,
+            "description": "publications held or associated with",
+            "items": { "$ref": "publication.json#" }
+        },
+        "remunerations": {
+            "type": "array",
+            "minItems": 1,
+            "description": "money paid for work or a service",
+            "items": { "$ref": "remuneration.json#" }
+        },
+        "skills": {
+            "type": "array",
+            "minItems": 1,
+            "description": "skills aquired / held",
+            "items": { "$ref": "skill.json#" }
+        },
+        "summaries": {
+            "type": "array",
+            "minItems": 1,
+            "description": "brief statement covering the main points about a person",
+            "items": { "type": "string" }
+        },
+        "volunteerWorks": {
+            "type": "array",
+            "minItems": 1,
+            "description": "voluntary work undertaken",
+            "items": { "$ref": "volunteerWork.json#" }
+        },
+        "websites": {
+            "type": "array",
+            "minItems": 1,
+            "description": "websites associated with person",
+            "items": { "$ref": "website.json#" }
+        }
+    },
+    "anyOf": [
+        { "required": ["fullName"] },
+        { "required": ["emailAddress"] },
+        { "required": ["phoneNumbers"] }
+    ]
+}

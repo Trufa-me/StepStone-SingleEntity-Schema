@@ -1,0 +1,157 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "minProperties": 2,
+    "required": ["date"],
+    "description": "details of work wanted",
+    "properties": {
+        "certifications" : {
+            "$ref":"#/definitions/certification",
+            "description": "certificates or licences"
+        },
+        "commuteTimes": {
+            "$ref":"#/definitions/commuteTimes",
+            "description": "commute time acceptable from an optional given location"
+        },
+        "companies" : {
+            "$ref":"nonEmptyArrayOfStrings.json#",
+            "description": "company names"
+        },
+        "date": { 
+            "$ref": "#/definitions/date",
+            "description": "date aspiration was created"
+        },
+        "desiredLocations" : { 
+            "$ref":"#/definitions/locations",
+            "description": "locations held"
+        },
+        "educations": {
+            "$ref":"#/definitions/educations",
+            "description": "desired education"
+        },
+        "jobTitles" : {
+            "$ref":"nonEmptyArrayOfStrings.json#",
+            "description": "role or job title wanted"
+        },
+        "keywords" : {
+            "$ref":"nonEmptyArrayOfStrings.json#",
+            "description": "skills offered or sought"
+        },
+        "origins" : {
+            "$ref":"nonEmptyArrayOfStrings.json#",
+            "description": "sources of the aspiration"
+        },
+        "remunerations" : { 
+            "$ref":"#/definitions/remunerations",
+            "description": "desired remunerations"
+        },
+        "searchType": {
+            "$ref":"nonEmptyArrayOfStrings.json#",
+            "description": "actively searching (search) or passively searching (jbe)"
+        },
+        "sectors": {
+            "$ref":"nonEmptyArrayOfStrings.json#",
+            "description": "sectors preferred"
+        },
+        "training": {
+            "$ref":"#/definitions/training",
+            "description": "training that the person seeks"
+        },
+        "workTypes": {
+            "$ref":"#/definitions/workTypes",
+            "description": "desired work pattern"
+        }
+    },
+    "definitions": {
+        "certification": {
+            "type": "array",
+            "items": {
+                "$ref": "certification.json"
+            }
+        },
+        "date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "timestamp when the aspiration was recorded"
+        },
+        "locations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "minProperties": 1,
+                "properties": {
+                    "location": {
+                        "$ref": "location.json#"
+                    },
+                    "distanceConsidered": {
+                        "type": "integer",
+                        "description": "range of the search in distance from location"
+                    },
+                    "rangeUnits": {
+                        "enum": ["miles", "km"],
+                        "description": "Range units"
+                    },
+                    "willRelocate": {
+                        "type": "boolean",
+                        "description": "person willing to relocate"
+                    }
+                },
+                "dependencies": {
+                    "distanceConsidered": ["rangeUnits"],
+                    "rangeUnits": ["distanceConsidered"]
+                }
+            }
+        },
+        "remunerations": {
+            "type": "array",
+            "items": {
+                "$ref": "remuneration.json#"
+            }
+        },
+        "commuteTimes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "minProperties":1,
+                "properties": {
+                    "maximumDuration": {
+                        "type": "string",
+                        "description": "maximum commute time person will accept"
+                    },
+                    "fromLocation": {
+                        "$ref": "location.json#"
+                    }
+                }
+            }
+        },
+        "training": {
+            "type": "array",
+            "items": {
+                "$ref": "education.json#"
+            }
+        },
+        "educations": {
+            "type": "array",
+            "items": {
+                "$ref": "education.json#"
+            }
+        },
+        "workTypes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "duration": {
+                        "type": "string"
+                    },
+                    "workPattern": { "$ref": "workPattern.json" }
+                }
+            }
+        }
+    }
+}

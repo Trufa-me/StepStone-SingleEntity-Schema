@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["name"],
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "industry or market sector"
+        },
+        "normalised": {
+            "$ref": "normalised.json",
+            "description": "normalised version of role"
+        }
+    }
+}
