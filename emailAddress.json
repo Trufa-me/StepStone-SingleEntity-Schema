@@ -1,7 +1,6 @@
 {
     "type": "object",
     "additionalProperties": false,
-    "required": ["confidence"],
     "properties": {
         "email": {
             "type": "string",
@@ -18,12 +17,6 @@
         "isPrimary": {
             "type": "boolean",
             "description": "Is this the primary email address"
-        },
-        "confidence": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 100,
-            "description": "the confidence in the email address being related directly with profile"
         },
         "legals": {
            "type": "array",

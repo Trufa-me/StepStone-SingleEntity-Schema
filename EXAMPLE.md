@@ -298,7 +298,6 @@
               "md5sum":"d41d8cd98f00b204e9800998ecf8427e",
               "emailType": "personal",
               "isPrimary": false,
-              "confidence": 45,
               "legals": [
                   {
                       "contractType": "verified",
@@ -314,7 +313,6 @@
             },
             {
               "md5sum":"d41d8cd98f00b204e9800998ecf8427e",
-              "confidence": 45
             }
         ],
         "experiences": [
@@ -443,7 +441,6 @@
               "lastAccessed":"2017-01-01T00:00:00.00Z",
               "lastUpdated":"2017-01-01T01:00:00.00Z",
               "isPrimary": false,
-              "confidence": 30,
               "legals": [
                   {
                       "contractType": "firstPartyUse",
@@ -473,7 +470,6 @@
               "networkLocators": [
                   {
                       "kind": "url",
-                      "confidence": 90,
                       "locator": "http://foo.com"
                   }
               ]
@@ -505,7 +501,6 @@
             {
               "telephone": "+4479898966786",
               "isPrimary": false,
-              "confidence": 12,
               "legals": [
                   {
                       "contractType": "firstPartyUse",

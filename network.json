@@ -11,12 +11,6 @@
             "type": "string",
             "description": "identify's the stepweb profile ID this data was dirived from"
         },
-        "confidence": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 100,
-            "description": "the confidence in the network being correct"
-        },
         "tracingId": {
             "type": "string",
             "description": "public identifier used to identify a person in given network"
@@ -59,17 +53,8 @@
                     "locator": {
                         "type": "string",
                         "description": "actual address that locates object in network"
-                    },
-                    "confidence": {
-                        "type": "integer",
-                        "minimum": 0,
-                        "maximum": 100,
-                        "description": "the confidence in the network being correct"
                     }
-                },
-                "anyOf": [
-                    { "required": ["confidence"] }
-                ]
+                }
             }
         },
         "isPrimary": {
