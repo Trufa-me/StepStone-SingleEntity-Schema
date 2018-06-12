@@ -5,9 +5,9 @@
     "properties": {
         "contractType"        : {
             "enum"            : [
-                "firstPartyUse", "thirdPartyUse", "discoverable", "delete", "contactable",
-                "verified" 
-            ]
+                "discoverable", "delete", "contactable"
+            ],
+            "description": "has person agreed to be found by a search (discoverable) or contacted (contactable)"
         },
         "date": {
             "type": "string",
