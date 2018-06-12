@@ -1,7 +1,7 @@
 {
     "type": "object",
     "additionalProperties": false,
-    "required": ["name", "isPrimary", "confidence", "legals"],
+    "required": ["name", "isPrimary", "legals"],
     "properties": {
         "id": {
             "type": "string",
@@ -64,7 +64,7 @@
     },
     "anyOf": [
         { "required": ["id"] },    
-        { "required": ["networkLocators", "lastUpdated"] },
-        { "required": ["networkLocators", "lastAccessed"] }
+        { "required": ["name"] },    
+        { "required": ["networkLocators"] }
     ]
 }
