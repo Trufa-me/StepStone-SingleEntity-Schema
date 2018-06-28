@@ -27,11 +27,11 @@
             "type": "string",
             "description": "Region"
         },
-        "lat": {
+        "latitude": {
             "type": "string",
             "description": "Latitude"
         },
-        "lng": {
+        "longitude": {
             "type": "string",
             "description": "Longitude"
         },
