@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["kind", "date"],
+    "description": "modelling of an event that occurs",
+    "properties": {
+      "kind": {
+        "enum": ["appliedOn", "expiresOn", "updatedOn"],
+        "description": "event that occured"
+      },
+      "date": {
+        "type": "string",
+        "format": "date-time",
+        "description": "time of event"
+      }
+    }
+}

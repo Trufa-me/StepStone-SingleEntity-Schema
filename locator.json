@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "description": "identifiable locators",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+        "type": "string",
+        "description": "locator type (i.e. companyProfile, apply, vacancy, vacancyShort)"
+    },
+    "locator": {
+        "type": "string",
+        "description": "URL that defines a resource"
+    }
+  },
+  "anyOf": [
+      { "required": ["kind", "locator"] }
+  ]
+}

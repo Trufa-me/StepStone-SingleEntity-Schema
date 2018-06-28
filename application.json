@@ -1,0 +1,58 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "description": "application",
+    "properties": {
+      "id": {
+          "type": "string",
+          "description": "unique identifier for an application"
+      },
+      "title": {
+        "type": "string",
+        "description": "title or name of the application"
+      },
+      "description": {
+        "type": "string",
+        "description": "summary of the application"
+      },
+      "content": {
+        "type": "string",
+        "description": "content block (i.e. HTML, XML, JSON)"
+      },
+      "type": {
+        "enum": ["internal", "web", "test", "mobile", "other"],
+        "description": "type / source of application"
+      },
+      "organisation": { "$ref": "organisation.json#" },
+      "location": { "$ref": "location.json#" },
+      "remunerations": { "$ref": "remuneration.json" },
+      "workType": { "$ref": "workPattern.json#" },
+      "locators": {
+        "type": "array",
+        "minItems": 1,
+        "description": "resource locator related or about the application",
+        "items": { "$ref": "locator.json#" }
+      },
+      "events": {
+        "type": "array",
+        "minItems": 1,
+        "description": "events related or about the application",
+        "items": { "$ref": "event.json#" }
+      },
+      "origins" : {
+          "$ref":"nonEmptyArrayOfStrings.json#",
+          "description": "sources of application"
+      },
+      "industries": {
+          "type": "array",
+          "minItems": 1,
+          "description": "industries or market sectors application is in",
+          "items": { "$ref": "industry.json#" }
+      }
+    },
+    "anyOf": [
+      { "required": ["type", "title", "locators"] },
+      { "required": ["type", "title"] }
+    ]
+}
+ 
