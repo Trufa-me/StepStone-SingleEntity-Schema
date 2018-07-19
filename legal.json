@@ -5,9 +5,10 @@
     "properties": {
         "contractType"        : {
             "enum"            : [
-                "discoverable", "delete", "contactable"
+                "discoverable", "delete", "contactable", "communicative"
             ],
-            "description": "has person agreed to be found by a search (discoverable) or contacted (contactable)"
+            "description": 
+            "an explicit contract set by the person. 'discoverable' = searchable. 'communicative' is explicitly for when the artifact is being exchanged and does not constitute agreement from the person"
         },
         "date": {
             "type": "string",
