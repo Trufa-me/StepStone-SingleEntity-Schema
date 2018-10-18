@@ -33,6 +33,10 @@
             "$ref":"nonEmptyArrayOfStrings.json#",
             "description": "role or job title wanted"
         },
+        "currentRole" : {
+            "type": "string",
+            "description": "current role"
+        },
         "keywords" : {
             "$ref":"nonEmptyArrayOfStrings.json#",
             "description": "skills offered or sought"
